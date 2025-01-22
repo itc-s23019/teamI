@@ -1,5 +1,13 @@
-import "@/styles/globals.css";
+import '../styles/globals.css'; // グローバルCSS
+import Sidebar from '../components/Sidebar';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+export default function MyApp({ Component, pageProps }) {
+    return (
+        <div style={{ display: 'flex' }}>
+            <Sidebar />
+            <div style={{ flex: 1 }}>
+                <Component {...pageProps} />
+            </div>
+        </div>
+    );
 }
